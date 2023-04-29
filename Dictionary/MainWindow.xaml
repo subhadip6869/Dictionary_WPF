@@ -35,7 +35,15 @@
                 <TextBlock Text="Search Word" FontSize="18"/>
                 <ComboBox x:Name="search_box"
                           IsEditable="True" 
-                          FontSize="16" KeyUp="search_box_KeyUp"/>
+                          FontSize="16" KeyUp="search_box_KeyUp"
+                          VirtualizingPanel.IsVirtualizing="True"
+                          ScrollViewer.CanContentScroll="True" SelectionChanged="search_box_SelectionChanged">
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel/>
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                </ComboBox>
             </StackPanel>
 
             <TextBlock x:Name="id_label"  Text="Word ID: 0" Grid.Column="1" FontSize="16" FontStyle="Italic" Margin="10,10,10,10" VerticalAlignment="Bottom"/>
@@ -48,7 +56,10 @@
             </Grid.ColumnDefinitions>
 
             <ListBox x:Name="data_listbox" Grid.Column="0" Margin="10,10,10,10" FontSize="16" SelectionChanged="data_listbox_SelectionChanged"/>
-            <TextBox x:Name="display_box" Grid.Column="1" Margin="10,10,10,10" FontSize="16" IsReadOnly="True"/>
+            <TextBox x:Name="display_box" 
+                     Grid.Column="1" Margin="10,10,10,10" 
+                     FontSize="16" IsReadOnly="True"
+                     TextWrapping="WrapWithOverflow"/>
         </Grid>
     </Grid>
 </Window>
