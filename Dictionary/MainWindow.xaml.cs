@@ -65,18 +65,21 @@ namespace Dictionary
                     data_listbox.SelectedIndex = index;
                     search_box.SelectedIndex = index;
                 }
-                catch (ArgumentOutOfRangeException bound_ex)
+                catch (ArgumentOutOfRangeException)
                 {
-                    MessageBox.Show(bound_ex.Message, "Item not found", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                    MessageBox.Show("No words found!", "Item not found", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 }
             }
         }
 
         private void search_box_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int index = search_box.SelectedIndex;
-            data_listbox.SelectedIndex = (int)index;
-            data_listbox.ScrollIntoView(data_listbox.Items[index]);
+            if (search_box.SelectedItem != null)
+            {
+                int index = search_box.SelectedIndex;
+                data_listbox.SelectedIndex = (int)index;
+                data_listbox.ScrollIntoView(data_listbox.Items[index]);
+            }
         }
 
         private void data_listbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -103,9 +106,9 @@ namespace Dictionary
 
                 search_box.SelectedIndex = data_listbox.SelectedIndex;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No words found!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
