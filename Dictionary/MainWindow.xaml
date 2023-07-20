@@ -21,9 +21,22 @@
         <Rectangle Fill="#cccccc" Grid.Row="0"/>
         <Rectangle Fill="#dddddd" Grid.Row="3"/>
 
-        <TextBlock Grid.Row="0" Text="Dictionary"
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Grid.Column="0" Text="Dictionary"
                    FontSize="60" FontFamily="Algerian"
                    VerticalAlignment="Center" Margin="10,0,0,0"/>
+
+            <TextBlock Grid.Column="1" Text="Developed by Subhadip Dutta"
+                       FontSize="18" Margin="0,0,10,10"
+                       TextWrapping="Wrap" TextAlignment="Right"
+                       VerticalAlignment="Bottom"/>
+        </Grid>
+        
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
