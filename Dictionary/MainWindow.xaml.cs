@@ -47,9 +47,11 @@ namespace Dictionary
                 }
                 conn.Close();
             }
-            catch (System.InvalidOperationException ioe)
+            catch (System.InvalidOperationException)
             {
-                MessageBoxResult messageBoxResult = MessageBox.Show(ioe.Message + "\nDo you want to install?",
+                MessageBoxResult messageBoxResult = MessageBox.Show("Microsoft Access Database Engine is required for running this program"
+                    + "\nDo you want to install?" 
+                    + "\n(Please download the 32-bit version)",
                     "Database Engine Required", MessageBoxButton.YesNo, MessageBoxImage.Error);
                 if (messageBoxResult == MessageBoxResult.Yes)
                 {
