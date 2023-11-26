@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Threading;
@@ -48,10 +47,19 @@ namespace Dictionary
                 }
                 conn.Close();
             }
+            catch (System.InvalidOperationException ioe)
+            {
+                MessageBoxResult messageBoxResult = MessageBox.Show(ioe.Message + "\nDo you want to install?",
+                    "Database Engine Required", MessageBoxButton.YesNo, MessageBoxImage.Error);
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("https://www.microsoft.com/en-in/download/details.aspx?id=13255");
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            } 
+            }
         }
 
         private void search_box_KeyUp(object sender, KeyEventArgs e)
