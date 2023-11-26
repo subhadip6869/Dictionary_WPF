@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dictionary", "Dictionary\Dictionary.csproj", "{3D0AD2D6-D41A-48F2-AF90-63DC612EBA9F}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SD Dictionary", "SD Dictionary\SD Dictionary.vdproj", "{32D79530-AC79-4C19-A7D6-8C6FA5C6E592}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{3D0AD2D6-D41A-48F2-AF90-63DC612EBA9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D0AD2D6-D41A-48F2-AF90-63DC612EBA9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D0AD2D6-D41A-48F2-AF90-63DC612EBA9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32D79530-AC79-4C19-A7D6-8C6FA5C6E592}.Debug|Any CPU.ActiveCfg = Debug
+		{32D79530-AC79-4C19-A7D6-8C6FA5C6E592}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
